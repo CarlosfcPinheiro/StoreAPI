@@ -5,6 +5,7 @@ const morgan = require('morgan');
 // Import local resources
 const connectDB = require('./db/connect');
 const productsRouter = require('./routes/products');
+const Product = require('./models/Product');
 
 // Getting Middlewares ================
 const errorNotFound = require('./middlewares/not-found');
