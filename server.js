@@ -1,5 +1,6 @@
 // Import modules =================
 const express = require('express');
+const morgan = require('morgan');
 
 // Import local resources
 const connectDB = require('./db/connect');
@@ -10,6 +11,7 @@ const errorNotFound = require('./middlewares/not-found');
 const errorHandler = require('./middlewares/error-handler');
 
 // async errors
+require('express-async-errors');
 
 // Setting dotenv ====================
 // Setting the enviroment variables to encapsulate the important data
@@ -21,7 +23,9 @@ const server = express();
 
 // Applying middleware ==============
 // express.json() => Built-in middleware function that parses incoming requests with JSON content-type, analyzing them and their datas
+server.use(morgan('tiny'));
 server.use(express.json());
+// applying products router as a middleware function
 server.use('/api/v1/products', productsRouter);
 
 // Setting routes ============
@@ -31,7 +35,7 @@ server.get('/', (req, res) => {
 });
 
 // Main start API function =================
-const port = process.env.PORT || 5500;
+const port = process.env.PORT || 3000;
 
 server.use(errorNotFound);
 server.use(errorHandler);
