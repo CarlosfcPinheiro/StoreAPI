@@ -9,7 +9,7 @@ const productSchema = new mongoose.Schema({
     },
     price:{
         type: Number,
-        requuired: [true, 'The product must have a price.']
+        required: [true, 'The product must have a price.']
     },
     featured:{
         type: Boolean,
@@ -37,5 +37,5 @@ const productSchema = new mongoose.Schema({
 });
 
 // Exporting the model to create the documents on db
-// .model() => create an subclass of mongoose.Model, that through the model it's possible to create instances of this model (documents)
+// .model() => create an subclass of mongoose.Model, that through the model it's possible to create instances (documents) of this model
 module.exports = mongoose.model('Product', productSchema);
