@@ -53,7 +53,6 @@ const products = [
       "featured": true,
       "company": "ikea"
     },
-  
     {
       "name": "leather sofa",
       "price": 99,

@@ -1,6 +1,8 @@
 // Import modules =================
 const express = require('express');
 const morgan = require('morgan');
+// async errors
+require('express-async-errors');
 
 // Import local resources
 const connectDB = require('./db/connect');
@@ -10,9 +12,6 @@ const Product = require('./models/Product');
 // Getting Middlewares ================
 const errorNotFound = require('./middlewares/not-found');
 const errorHandler = require('./middlewares/error-handler');
-
-// async errors
-require('express-async-errors');
 
 // Setting dotenv ====================
 // Setting the enviroment variables to encapsulate the important data
